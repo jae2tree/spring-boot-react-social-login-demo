@@ -1,7 +1,6 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-console.log('path', path.join(__dirname, 'dist'));
+
 module.exports = {
   name: 'react-social',
   mode: 'development',
@@ -41,6 +40,10 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.less$/,
+        use: ['style-loader', 'css-loader',"less-loader"],
       },
     ],
   },
