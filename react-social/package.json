@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack serve"
+    "dev": "cross-env NODE_ENV=development webpack serve"
   },
   "author": "",
   "license": "MIT",
@@ -13,17 +13,21 @@
     "bootstrap": "^4.5.3",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.7",
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-react": "^7.12.7",
     "babel-loader": "^8.2.1",
+    "cross-env": "^7.0.2",
     "css-loader": "^5.0.1",
     "less": "^3.12.2",
     "less-loader": "^7.1.0",
     "react-hot-loader": "^4.13.0",
+    "redux-devtools": "^3.7.0",
     "style-loader": "^2.0.0",
     "webpack": "^5.6.0",
     "webpack-cli": "^4.2.0",
