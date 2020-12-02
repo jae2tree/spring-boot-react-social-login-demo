@@ -1,6 +1,6 @@
 package com.rest.demo.security;
 
-import com.rest.demo.entity.User;
+import com.rest.demo.model.User;
 import com.rest.demo.exception.ResourceNotFoundException;
 import com.rest.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

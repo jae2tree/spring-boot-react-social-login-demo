@@ -1,7 +1,7 @@
 package com.rest.demo.repository;
 
 
-import com.rest.demo.entity.User;
+import com.rest.demo.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
