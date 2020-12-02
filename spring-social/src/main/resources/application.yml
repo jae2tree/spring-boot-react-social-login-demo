@@ -4,7 +4,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/social?characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:mysql://172.28.18.192:3306/social?characterEncoding=UTF-8&serverTimezone=UTC
     platform: mysql
     username: jae2tree
     password: 1234
@@ -15,9 +15,17 @@ spring:
     generate-ddl: true
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
     properties:
       hibernate:
         show_sql: true
         format_sql: true
         use_sql_comments: true
+
+app:
+  auth:
+    tokenSecret: 926D96C90030DD58429D2751AC1BDBBC
+    tokenExpirationMsec: 864000000
+  oauth2:
+    authorizedRedirectUris:
+      - http://localhost:3000/oauth2/redirect
