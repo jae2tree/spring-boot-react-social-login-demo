@@ -18,10 +18,12 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+    compile 'io.jsonwebtoken:jjwt:0.9.0'
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'mysql:mysql-connector-java'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testCompile group: 'org.springframework.security', name: 'spring-security-test', version: '5.3.2.RELEASE'
 }
 
 test {
