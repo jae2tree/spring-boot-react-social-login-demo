@@ -13,9 +13,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-    UserRepository userRepository;
+    private UserRepository userRepository;
     
-    CustomUserDetailsService (UserRepository userRepository) {
+    public CustomUserDetailsService (UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

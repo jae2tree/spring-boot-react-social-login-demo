@@ -1,6 +1,7 @@
 package com.rest.demo.config;
 
 import com.rest.demo.security.CustomUserDetailsService;
+import com.rest.demo.security.TokenAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +23,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     public SecurityConfig(CustomUserDetailsService customUserDetailsService) {
         this.customUserDetailsService = customUserDetailsService;
+    }
+
+    @Bean
+    public TokenAuthenticationFilter tokenAuthenticationFilter() {
+        return new TokenAuthenticationFilter();
     }
 
     @Override
@@ -58,6 +64,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .disable()
                 .httpBasic()
                     .disable()
+                .authorizeRequests()
+                    .antMatchers("/",
+                            "/error",
+                            "/favicon.ico",
+                            "/**/*.png",
+                            "/**/*.gif",
+                            "/**/*.svg",
+                            "/**/*.jpg",
+                            "/**/*.html",
+                            "/**/*.css",
+                            "/**/*.js")
+                        .permitAll()
+                    .antMatchers("/auth/**", "/oauth2/**")
+                        .permitAll()
+                    .anyRequest()
+                        .authenticated()
+                    .and()
                 ;
     }
 }

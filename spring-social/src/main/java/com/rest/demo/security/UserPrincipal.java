@@ -52,12 +52,7 @@ public class UserPrincipal implements OAuth2User, UserDetails {
 
     @Override
     public Map<String, Object> getAttributes() {
-        return null;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return attributes;
     }
 
     public void setAttributes(Map<String, Object> attributes) {
@@ -65,37 +60,42 @@ public class UserPrincipal implements OAuth2User, UserDetails {
     }
 
     @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return authorities;
+    }
+
+    @Override
     public String getName() {
-        return null;
+        return String.valueOf(id);
     }
 
     @Override
     public String getPassword() {
-        return null;
+        return password;
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return email;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }
